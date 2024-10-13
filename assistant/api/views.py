@@ -1,14 +1,21 @@
 import openai
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import os
+import json
 
+openai.api_key= os.getenv('OPENAI_API_KEY')
+
+@csrf_exempt
 def get_gpt_response(request):
-    message = request.GET.get('message')
+    body = json.loads(request.body)
+    message = body.get('message')
 
     try:
-        completion = openai.chat.completion.create(
+        completion = openai.chat.completions.create(
             model="gpt-4",
             messages=[
-                {"role": "assistant", "content": "You are my personal assistant. well rounded in Engineering, finance and you only give briefe answeres. unless i ask for more detail"},
+                # {"role": "assistant", "content": "You are my personal assistant. well rounded in Engineering, finance and you only give briefe answeres. unless i ask for more detail"},
                 {
                     "role": "user",
                     "content": message  # Using the message from the request
@@ -17,9 +24,9 @@ def get_gpt_response(request):
         )
 
         # Print the response to the console
-        print(completion)
+        response = completion.choices[0].message.content
 
-        return JsonResponse({"response": completion.choices[0].message})
+        return JsonResponse({"response": completion.choices[0].message.content})
 
     except Exception as e:
         print(f"Error fetching GPT response: {e}")
