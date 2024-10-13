@@ -24,6 +24,7 @@ def get_gpt_response(request):
             ]
         )
 
+        print(completion._request_id)
         # Print the response to the console
         response = completion.choices[0].message.content
 
