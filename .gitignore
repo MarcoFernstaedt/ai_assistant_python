@@ -1,0 +1,99 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+*.pycache/
+
+# Environment Variables
+.env
+
+# Virtualenv
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# pip files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Celery beat schedule file
+celerybeat-schedule
+
+# Flask and Django specific stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# If you're using Docker:
+*.stackdump
+docker-compose.override.yml
+
+# TTS (pyttsx3 specific files)
+tts_cache/
+
+# Speech recognition temporary files
+speech_recognition_temp/
+
+# OpenAI specific configurations
+openai/
+
+# JetBrains
+.idea/
+
+# Local env files
+.env
+.env.local
+.env.production
+.env.test
+
+# macOS specific files
+.DS_Store
